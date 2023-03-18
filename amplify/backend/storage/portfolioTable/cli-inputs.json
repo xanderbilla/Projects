@@ -1,0 +1,18 @@
+{
+  "resourceName": "portfolioTable",
+  "tableName": "portfolioTable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [
+    {
+      "name": "title",
+      "partitionKey": {
+        "fieldName": "title",
+        "fieldType": "string"
+      }
+    }
+  ],
+  "triggerFunctions": []
+}

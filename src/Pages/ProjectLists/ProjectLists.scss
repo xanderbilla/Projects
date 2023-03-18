@@ -1,0 +1,52 @@
+.project-lists {
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    width: 80%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    .project-lists-header {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+  
+      .header {
+        font-size: 36px;
+        font-weight: bold;
+      }
+    }
+  
+    .project-lists-desc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+  
+      .desc {
+        margin: 10px;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  
+    .project-list {
+      display: grid;
+      justify-content: center;
+      margin-bottom: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* added this line */
+      gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    .wrapper{
+      .project-lists-header{
+        .header{          
+        font-size: 30px;
+      }
+      }
+    }
+  }
+
+}

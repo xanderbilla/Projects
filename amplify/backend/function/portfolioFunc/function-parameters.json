@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "portfolioTable": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

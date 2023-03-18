@@ -1,0 +1,60 @@
+{
+  "api": {
+    "portfolioAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "portfolioFunc"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "portfolioFunc": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "portfolioTable"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_portfolioFunc_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolioFunc"
+        }
+      ]
+    },
+    "AMPLIFY_function_portfolioFunc_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "portfolioFunc"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "portfolioTable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
